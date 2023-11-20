@@ -8,6 +8,8 @@ import Header from './Header';
 import Hero from './Hero';
 import Statistics from './Statistics';
 import About from './About';
+import Skills from './Skills';
+import Experience from './Experiecejs';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
             <Route path='/Hero' element = {<Hero />}> </Route>
             <Route path='/Statistics' element = {<Statistics />}> </Route>
             <Route path='/About' element = {<About />}> </Route>
+            <Route path='/Skills' element = {<Skills />}> </Route>
+            <Route path='/Experience' element = {<Experience />}> </Route>
           </Routes>
         </div>
       </div>

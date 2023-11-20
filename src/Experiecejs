@@ -1,0 +1,67 @@
+import React from 'react';
+import { experienceItems, experienceYears } from './main'
+
+const Experience = () => {
+  const experienceChunks = experienceItems;
+
+  return (
+    <div className="experience-section section" tabIndex="-1">
+      <div className="container">
+        <div className="section-content row">
+
+          {/* Timeline */}
+          <div className="col-lg-6">
+            <div className="experience-timeline">
+              <div className="timepath">
+                <span className="line"></span>
+                {experienceChunks.map((line, index) => (
+                  <React.Fragment key={index}>
+                    <span className="semicircle"></span>
+                    <span className="line"></span>
+                  </React.Fragment>
+                ))}
+              </div>
+
+              <ul className="timeline-items">
+                {experienceItems.map((item, index) => (
+                  <li key={index} className="has-ultimate-tooltip" tabIndex="0">
+                    {Object.keys(item).length > 0 && (
+                      <>
+                        <h3>{item.date}</h3>
+                        <div className="ultimate-tooltip">
+                          <h4 className="ultimate-tooltip-title">{item.companyName.en}</h4>
+                          <h5 className="ultimate-tooltip-subtitle">{item.jobTitle.en}</h5>
+                          <p>{item.desc.en}</p>
+                        </div>
+                        <div className="ultimate-tooltip-arrow"></div>
+                      </>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Text box */}
+          <div className="experience-text col-lg-6">
+            <div className="text-box-inline">
+              <span className="subtitle">experience</span>
+              <h2>
+                {experienceYears}+ Years of Experience
+                <br />
+                With Many Awards!
+              </h2>
+              <p>
+                I have been developing sites and apps for {experienceYears} years and I know for sure the main trends and directions of modern design. I have been a visionary and a reliable software engineering partner for world-class brands. You will get a decent result as you expect.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Experience;
+
+
